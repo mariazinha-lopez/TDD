@@ -25,12 +25,6 @@ public class processadorBoletoTest {
 
 	
 	@Test
-	public void testRecebeFatura() {
-		ProcessadorBoleto pb = new ProcessadorBoleto();
-		Assertions.assertEquals(200.50, pb.SalvaFatura(fatura));
-	}
-	
-	@Test
 	public void testCriaPagamento() {
 		ProcessadorBoleto pb = new ProcessadorBoleto();
 		pagamento = pb.CriaPagamento(boleto,"2020-09-30","BOLETO");
@@ -53,7 +47,6 @@ public class processadorBoletoTest {
 		f.adicionarBoleto(b);
 		f.adicionarBoleto(b2);
 		pb.VerificaPagamentoFatura(f);
-		System.out.println(f.getStatus());
 		Assertions.assertTrue(f.getStatus()=="NÃO PAGA");
 	}
 }
