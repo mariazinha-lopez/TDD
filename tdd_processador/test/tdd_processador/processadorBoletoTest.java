@@ -43,4 +43,17 @@ public class processadorBoletoTest {
 		ProcessadorBoleto pb = new ProcessadorBoleto();
 		pb.SomaBoletos(fatura);
 	}
+	
+	@Test
+	public void testVerificaPagamentoFatura() {
+		ProcessadorBoleto pb = new ProcessadorBoleto();
+		Fatura f = new Fatura("2020-01-22", 50.90, "Mariana Oliveira", "");
+		Boleto b = new Boleto ("23423423", "2020-01-23", 2.50);
+		Boleto b2 = new Boleto ("23234467", "2019-05-19", 20.50);
+		f.adicionarBoleto(b);
+		f.adicionarBoleto(b2);
+		pb.VerificaPagamentoFatura(f);
+		System.out.println(f.getStatus());
+		Assertions.assertTrue(f.getStatus()=="NÃO PAGA");
+	}
 }

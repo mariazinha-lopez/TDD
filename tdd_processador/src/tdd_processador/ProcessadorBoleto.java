@@ -16,8 +16,16 @@ public class ProcessadorBoleto{
 		for (Boleto b: f.getBoletos()){
 			soma += b.getValPago();
 		}
-		return soma;
-		
+		return soma;	
 	}
 	
+	public void VerificaPagamentoFatura(Fatura f) {
+		double soma = SomaBoletos(f);
+		if (soma < f.getValorTotal()) {
+			f.setStatus("NÃO PAGA");
+		}else {
+			f.setStatus("PAGA");
+		}
+		return;
+	}
 }
