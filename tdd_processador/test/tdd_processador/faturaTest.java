@@ -13,7 +13,7 @@ public class faturaTest {
 	}
 	
 	@Test
-	public void testAdicionaBoleto() {
+	public void testAdicionaBoletoNaListaBoletos() {
 		Boleto boleto = new Boleto ("23423423", "2020-01-23", 200.50);
 		Boleto boleto2 = new Boleto ("23234467", "2019-05-19", 2220.50);
 		Fatura f = new Fatura("2020-01-22", 200.50, "Wladimir Tourinho", "NÃO PAGO");
